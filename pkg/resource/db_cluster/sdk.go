@@ -653,6 +653,8 @@ func (rm *resourceManager) sdkFind(
 		ko.Spec.EnableIAMDatabaseAuthentication = ko.Status.IAMDatabaseAuthenticationEnabled
 	}
 
+	ko.Spec.EnableCloudwatchLogsExports = r.ko.Status.EnabledCloudwatchLogsExports
+
 	return &resource{ko}, nil
 }
 
